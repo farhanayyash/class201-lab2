@@ -3,7 +3,7 @@ alert("Wlcome to Farhan Ayyash website");
 
 var Username = 0;
 Username = check(Username,"Enter your name :");
-console.log(Username);
+//console.log(Username);
 
 var DoWanPlay = confirm(Username+", Do you want Play About Me guessing game ?");
 
@@ -70,12 +70,12 @@ if (count <= 2 ){
 }
 var cc = "<br><p>Hey "+ Username +" Your score is : "+ count +" "+improve+" </p>";
 finalp += cc;
-console.log(finalp);
+//console.log(finalp);
 document.getElementById("Answer").innerHTML = finalp;
 
-console.log(count);
+//console.log(count);
 
-console.log(cc);
+//console.log(cc);
 
 
 }
@@ -106,13 +106,15 @@ function checkyes(x,y){
 function checkfinal(x,y,z){
   if (x.toLowerCase() == "y" || x.toLowerCase() == "yes" ){
     if (y){
-      console.log(z+" Right");
+      //console.log(z+" Right");
+      alert("Right");
       finalp += "<p>"+z+" Right</p>";
       count +=1;
       
     }else{
-      console.log(z+" wrong");
+      //console.log(z+" wrong");
       finalp += "<p>"+z+" wrong</p>";
+      alert("Wrong");
   
     }
   }
@@ -120,11 +122,13 @@ function checkfinal(x,y,z){
 function checkfinalno(x,y,z){
   if (x.toLowerCase() == "n" || x.toLowerCase() == "no" ){
     if (y){
-      console.log(z+" wrong");
+      //console.log(z+" wrong");
       finalp += "<p>"+z+" wrong</p>";
+      alert("Wrong");
     }else{
-      console.log(z+" Right");
+      //console.log(z+" Right");
       finalp += "<p>"+z+" Right</p>";
+      alert("Right");
       count +=1;
       
     }
