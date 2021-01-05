@@ -25,43 +25,45 @@ var AMyhome = false ;
 var AMycar = true;
 var AMytime = true;
 
+var allquestions= ["Is Farhan a Civil Engineer?","Is Farhan have G_class?","Is Farhan living in USA?","Does Farhan want to be a programmer?","Is Farhan from the future?"];
+
 if (!(DoWanPlay)){
   alert("As you wish!")
 }else{
-  Myrate = check(Myrate,"Is Farhan a Civil Engineer?");
-  Myrate = checkyesorno(Myrate,"Is Farhan a Civil Engineer?");
+  Myrate = check(Myrate,allquestions[0]);
+  Myrate = checkyesorno(Myrate,allquestions[0]);
   turevalue=checkyes(Myrate,turevalue);
   
-  checkfinal(Myrate,AMyrate,"Is Farhan a Civil Engineer?");
-  checkfinalno(Myrate,AMyrate,"Is Farhan a Civil Engineer?");
+  checkfinal(Myrate,AMyrate,allquestions[0]);
+  checkfinalno(Myrate,AMyrate,allquestions[0]);
 
-  Myage = check(Myage,"Is Farhan have G_class?");
-  Myage = checkyesorno(Myage,"Is Farhan have G_class?");
+  Myage = check(Myage,allquestions[1]);
+  Myage = checkyesorno(Myage,allquestions[1]);
 turevalue=checkyes(Myage,turevalue);
 
-checkfinal(Myage,AMyage,"Is Farhan have G_class?");
-checkfinalno(Myage,AMyage,"Is Farhan have G_class?");
+checkfinal(Myage,AMyage,allquestions[1]);
+checkfinalno(Myage,AMyage,allquestions[1]);
 
-Myhome = check(Myhome,"Is Farhan living in USA?");
-Myhome = checkyesorno(Myhome,"Is Farhan living in USA?");
+Myhome = check(Myhome,allquestions[2]);
+Myhome = checkyesorno(Myhome,allquestions[2]);
 turevalue=checkyes(Myhome,turevalue);
 
-checkfinal(Myhome,AMyhome,"Is Farhan living in USA?");
-checkfinalno(Myhome,AMyhome,"Is Farhan living in USA?");
+checkfinal(Myhome,AMyhome,allquestions[2]);
+checkfinalno(Myhome,AMyhome,allquestions[2]);
 
-Mycar = check(Mycar,"Does Farhan want to be a programmer?");
-Mycar = checkyesorno(Mycar,"Does Farhan want to be a programmer?");
+Mycar = check(Mycar,allquestions[3]);
+Mycar = checkyesorno(Mycar,allquestions[3]);
 turevalue=checkyes(Mycar,turevalue);
 
-checkfinal(Mycar,AMycar,"Does Farhan want to be a programmer?");
-checkfinalno(Mycar,AMycar,"Does Farhan want to be a programmer?");
+checkfinal(Mycar,AMycar,allquestions[3]);
+checkfinalno(Mycar,AMycar,allquestions[3]);
 
-Mytime = check(Mytime,"Is Farhan from the future?");
-Mytime = checkyesorno(Mytime,"Is Farhan from the future?");
+Mytime = check(Mytime,allquestions[4]);
+Mytime = checkyesorno(Mytime,allquestions[4]);
 turevalue=checkyes(Mytime,turevalue);
 
-checkfinal(Mytime,AMytime,"Is Farhan from the future?");
-checkfinalno(Mytime,AMytime,"Is Farhan from the future?");
+checkfinal(Mytime,AMytime,allquestions[4]);
+checkfinalno(Mytime,AMytime,allquestions[4]);
 
 if (count <= 2 ){
   improve = "improve yourself";
@@ -80,6 +82,86 @@ document.getElementById("Answer").innerHTML = finalp;
 
 }
 alert("Hey "+ Username +" Your score is : "+ count+" "+improve);
+var count2 = 0;
+var q6 = 0;
+
+var ramd = Math.floor(Math.random() * 11);
+console.log(ramd);
+/* console.log((Number.isInteger(q6)));
+ */
+var guess = [];
+for (var i = 4; i > 0 ;i--){
+  q6 = prompt("guess a number, you have a "+i+" attempts ");
+  q6 = Number(q6);
+  while(!(Number.isInteger(q6))){
+    q6 = prompt("guess a number, you have a "+i+" attempts ");
+    q6 = Number(q6);
+  }
+  if (true){
+    if (q6 == ramd){
+      count2++;
+      alert("Great, You good!");
+      break;
+    }else if (q6 > ramd){
+      alert(q6+" is too high");
+      guess.push(q6);
+    }else{
+      alert(q6+" is too low");
+      guess.push(q6);
+    }
+  }
+}
+var trys="";
+console.log(guess);
+if (q6 != ramd){
+  for (var i = 0 ; i < guess.length ;i++){
+    trys = trys +'['+ guess[i]+'] ';
+  }
+  alert("My number was '"+ ramd+"', your guesses: "+trys);
+}
+console.log(count);
+
+var q7a = ["zarqa","amman","aqaba"]
+var q7 = "";
+var checkloop = 0;
+for(var i = 6; i > 0; i--){
+  q7= prompt("where I prefer to live? you have a "+ i+' attempts');
+  q7 = check(q7,"where I prefer to live? you have a "+ i+' attempts');
+  for (var c = 0 ; c < q7a.length;c++){
+    if (q7.toLowerCase() == q7a[c]){
+      alert("Great, "+q7+" was right");
+      count2++;
+      checkloop = 1;
+      break;
+    }else{
+      
+      continue;
+    }
+  }
+  if (checkloop == 1){
+    break;
+  }else{alert("ah, "+ q7+" Wrong try again.");}
+}
+var trys1=[];
+if(!(checkloop == 1 )){
+  for (var i = 0 ; i < q7a.length ;i++){
+    trys1 = trys1 +'['+ q7a[i]+'] ';
+  }
+  alert("The answers was : " +trys1);
+}else{
+  for (var i = 0 ; i < q7a.length ;i++){
+    trys1 = trys1 +'['+ q7a[i]+'] ';
+  }
+  alert("The answers was : " +trys1);
+}
+var finalcount= parseInt(count)+parseInt(count2);
+console.log(finalcount);
+
+alert("great you get: "+finalcount+" out of 7 questions asked.");
+
+
+
+
 
 
 function check(x, y ){
