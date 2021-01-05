@@ -83,7 +83,7 @@ document.getElementById("Answer").innerHTML = finalp;
 }
 alert("Hey "+ Username +" Your score is : "+ count+" "+improve);
 var count2 = 0;
-var q6 = 0;
+var q6 ;
 
 var ramd = Math.floor(Math.random() * 11);
 console.log(ramd);
@@ -93,7 +93,7 @@ var guess = [];
 for (var i = 4; i > 0 ;i--){
   q6 = prompt("guess a number, you have a "+i+" attempts ");
   q6 = Number(q6);
-  while(!(Number.isInteger(q6))){
+  while(!(Number.isInteger(q6)) || q6 == ""){
     q6 = prompt("guess a number, you have a "+i+" attempts ");
     q6 = Number(q6);
   }
