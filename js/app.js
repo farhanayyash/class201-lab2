@@ -91,7 +91,7 @@ document.getElementById("Answer").innerHTML = finalp;
 //console.log(cc);
 
 }
-alert("Hey "+ Username +" Your score is : "+ count+" "+improve);
+// alert("Hey "+ Username +" Your score is : "+ count+" "+improve);
 var count2 = 0;
 var q6 ;
 
@@ -167,10 +167,7 @@ if(!(checkloop == 1 )){
   }
   alert("The answers was : " +trys1);
 }
-var finalcount= parseInt(count)+parseInt(count2);
-console.log(finalcount);
 
-alert("great you get: "+finalcount+" out of 7 questions asked.");
 
 
 }
@@ -230,4 +227,12 @@ function checkfinalno(x,y,z){
     }
   }
 }
+var finalcount= parseInt(count)+parseInt(count2);
+console.log(finalcount);
 
+alert("great you get: "+finalcount+" out of 7 questions asked.");
+
+function h(){
+  alert('good bye');
+}
+h();
