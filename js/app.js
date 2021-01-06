@@ -24,13 +24,24 @@ var AMyage =  false;
 var AMyhome = false ;
 var AMycar = true;
 var AMytime = true;
-
+var allvar = [0,0,0,0,0];
 var allquestions= ["Is Farhan a Civil Engineer?","Is Farhan have G_class?","Is Farhan living in USA?","Does Farhan want to be a programmer?","Is Farhan from the future?"];
+var allans = [true,false,false,true,true];
 
 if (!(DoWanPlay)){
   alert("As you wish!")
 }else{
-  Myrate = check(Myrate,allquestions[0]);
+  for(var i = 0 ;i<=4;i++){
+    allvar[i] = check(allvar[i],allquestions[i]);
+    allvar[i] = checkyesorno(allvar[i],allquestions[i]);
+    turevalue=checkyes(allvar[i],turevalue);
+  
+    checkfinal(allvar[i],allans[i],allquestions[i]);
+    checkfinalno(allvar[i],allans[i],allquestions[i]);
+  }
+  guessgame();
+  guesscity();
+ /*  Myrate = check(Myrate,allquestions[0]);
   Myrate = checkyesorno(Myrate,allquestions[0]);
   turevalue=checkyes(Myrate,turevalue);
   
@@ -63,7 +74,7 @@ Mytime = checkyesorno(Mytime,allquestions[4]);
 turevalue=checkyes(Mytime,turevalue);
 
 checkfinal(Mytime,AMytime,allquestions[4]);
-checkfinalno(Mytime,AMytime,allquestions[4]);
+checkfinalno(Mytime,AMytime,allquestions[4]); */
 
 if (count <= 2 ){
   improve = "improve yourself";
@@ -79,13 +90,13 @@ document.getElementById("Answer").innerHTML = finalp;
 
 //console.log(cc);
 
-
 }
 alert("Hey "+ Username +" Your score is : "+ count+" "+improve);
 var count2 = 0;
 var q6 ;
 
-var ramd = Math.floor(Math.random() * 11);
+function guessgame(){
+  var ramd = Math.floor(Math.random() * 11);
 console.log(ramd);
 /* console.log((Number.isInteger(q6)));
  */
@@ -120,8 +131,10 @@ if (q6 != ramd){
   alert("My number was '"+ ramd+"', your guesses: "+trys);
 }
 console.log(count);
+}
 
-var q7a = ["zarqa","amman","aqaba"]
+function guesscity(){
+  var q7a = ["zarqa","amman","aqaba"]
 var q7 = "";
 var checkloop = 0;
 for(var i = 6; i > 0; i--){
@@ -160,6 +173,7 @@ console.log(finalcount);
 alert("great you get: "+finalcount+" out of 7 questions asked.");
 
 
+}
 
 
 
