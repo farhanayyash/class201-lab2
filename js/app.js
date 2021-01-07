@@ -18,6 +18,8 @@ var Mytime = 0;
 
 var finalp = "";
 var count = 0;
+var count2 = 0;
+
 
 var AMyrate = true ;
 var AMyage =  false;
@@ -92,7 +94,6 @@ document.getElementById("Answer").innerHTML = finalp;
 
 }
 // alert("Hey "+ Username +" Your score is : "+ count+" "+improve);
-var count2 = 0;
 var q6 ;
 
 function guessgame(){
@@ -110,7 +111,7 @@ for (var i = 4; i > 0 ;i--){
   }
   if (true){
     if (q6 == ramd){
-      count2++;
+      count2= count2+1;
       alert("Great, You good!");
       break;
     }else if (q6 > ramd){
@@ -143,7 +144,8 @@ for(var i = 6; i > 0; i--){
   for (var c = 0 ; c < q7a.length;c++){
     if (q7.toLowerCase() == q7a[c]){
       alert("Great, "+q7+" was right");
-      count2++;
+      count2= count2+1;
+      console.log(count2);
       checkloop = 1;
       break;
     }else{
@@ -228,7 +230,8 @@ function checkfinalno(x,y,z){
   }
 }
 var finalcount= parseInt(count)+parseInt(count2);
-console.log(finalcount);
+console.log(count2);
+console.log("This is your score: "+ finalcount);
 
 alert("great you get: "+finalcount+" out of 7 questions asked.");
 
