@@ -3,7 +3,6 @@ alert("Wlcome to Farhan Ayyash website");
 
 var Username = 0;
 Username = check(Username,"Enter your name :");
-//console.log(Username);
 
 var DoWanPlay = confirm(Username+", Do you want Play About Me guessing game ?");
 
@@ -43,40 +42,6 @@ if (!(DoWanPlay)){
   }
   guessgame();
   guesscity();
- /*  Myrate = check(Myrate,allquestions[0]);
-  Myrate = checkyesorno(Myrate,allquestions[0]);
-  turevalue=checkyes(Myrate,turevalue);
-  
-  checkfinal(Myrate,AMyrate,allquestions[0]);
-  checkfinalno(Myrate,AMyrate,allquestions[0]);
-
-  Myage = check(Myage,allquestions[1]);
-  Myage = checkyesorno(Myage,allquestions[1]);
-turevalue=checkyes(Myage,turevalue);
-
-checkfinal(Myage,AMyage,allquestions[1]);
-checkfinalno(Myage,AMyage,allquestions[1]);
-
-Myhome = check(Myhome,allquestions[2]);
-Myhome = checkyesorno(Myhome,allquestions[2]);
-turevalue=checkyes(Myhome,turevalue);
-
-checkfinal(Myhome,AMyhome,allquestions[2]);
-checkfinalno(Myhome,AMyhome,allquestions[2]);
-
-Mycar = check(Mycar,allquestions[3]);
-Mycar = checkyesorno(Mycar,allquestions[3]);
-turevalue=checkyes(Mycar,turevalue);
-
-checkfinal(Mycar,AMycar,allquestions[3]);
-checkfinalno(Mycar,AMycar,allquestions[3]);
-
-Mytime = check(Mytime,allquestions[4]);
-Mytime = checkyesorno(Mytime,allquestions[4]);
-turevalue=checkyes(Mytime,turevalue);
-
-checkfinal(Mytime,AMytime,allquestions[4]);
-checkfinalno(Mytime,AMytime,allquestions[4]); */
 
 if (count <= 2 ){
   improve = "improve yourself";
@@ -85,22 +50,19 @@ if (count <= 2 ){
 }
 var cc = "<br><p>Hey "+ Username +" Your score is : "+ count +" "+improve+" </p>";
 finalp += cc;
-//console.log(finalp);
 document.getElementById("Answer").innerHTML = finalp;
 
-//console.log(count);
 
-//console.log(cc);
+
+
 
 }
-// alert("Hey "+ Username +" Your score is : "+ count+" "+improve);
 var q6 ;
 
 function guessgame(){
   var ramd = Math.floor(Math.random() * 11);
 console.log(ramd);
-/* console.log((Number.isInteger(q6)));
- */
+
 var guess = [];
 for (var i = 4; i > 0 ;i--){
   q6 = prompt("guess a number, you have a "+i+" attempts ");
@@ -201,13 +163,11 @@ function checkyes(x,y){
 function checkfinal(x,y,z){
   if (x.toLowerCase() == "y" || x.toLowerCase() == "yes" ){
     if (y){
-      //console.log(z+" Right");
       alert("Right");
       finalp += "<p>"+z+" Right</p>";
       count +=1;
       
     }else{
-      //console.log(z+" wrong");
       finalp += "<p>"+z+" wrong</p>";
       alert("Wrong");
   
@@ -217,11 +177,9 @@ function checkfinal(x,y,z){
 function checkfinalno(x,y,z){
   if (x.toLowerCase() == "n" || x.toLowerCase() == "no" ){
     if (y){
-      //console.log(z+" wrong");
       finalp += "<p>"+z+" wrong</p>";
       alert("Wrong");
     }else{
-      //console.log(z+" Right");
       finalp += "<p>"+z+" Right</p>";
       alert("Right");
       count +=1;
